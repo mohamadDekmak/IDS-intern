@@ -11,8 +11,14 @@ use Laravel\Sanctum\HasApiTokens;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
+
+Route::get('/post-details', function () {
+    return view('pages.posts-details');
+});
+
+
 Route::get('/users',[UserController::class,'getAllUsers']);
 Route::post('/create-user',[UserController::class,'create']);
 Route::post('/update-user/{id}',[UserController::class,'update']);
